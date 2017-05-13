@@ -4,7 +4,6 @@ import (
 	"errors"
 	"fmt"
 	"reflect"
-	"testing"
 )
 
 type labeledContent struct {
@@ -13,7 +12,7 @@ type labeledContent struct {
 }
 
 // AssertEqual checks if provided values are equal.
-func AssertEqual(t *testing.T, actual interface{}, expected interface{}) error {
+func AssertEqual(actual interface{}, expected interface{}) error {
 	if !reflect.DeepEqual(expected, actual) {
 		msg := fmt.Sprintf("\nNot Equal:\n"+"  - Expected: %#v\n  - Received: %#v", expected, actual)
 		return errors.New(msg)
